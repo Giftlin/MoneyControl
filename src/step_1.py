@@ -6,6 +6,8 @@ from webdriver_manager.microsoft import EdgeChromiumDriverManager
 
 try:
   options = webdriver.ChromeOptions()
+  options.add_argument("start-maximized")
+  options.add_argument("--headless")
   driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
 except Exception:
   options = webdriver.FirefoxOptions()
