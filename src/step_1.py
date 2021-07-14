@@ -3,7 +3,6 @@ from webdriver_manager.chrome import ChromeDriverManager
 from datetime import datetime
 from webdriver_manager.firefox import GeckoDriverManager
 from webdriver_manager.microsoft import EdgeChromiumDriverManager
-from msedge.selenium_tools import EdgeOptions, Edge
 
 try:
   options = webdriver.ChromeOptions()
