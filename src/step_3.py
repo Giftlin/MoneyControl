@@ -1,11 +1,9 @@
-from selenium import webdriver
-from selenium.webdriver.common.by import By
 import pandas as pd
-from datetime import datetime
-import os
+from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
+options = webdriver.ChromeOptions()
 
-driver = webdriver.Chrome(
-    executable_path="C:\\Users\\Giftlin Nowfal\\OneDrive\\Documents\\chromedriver.exe")
+driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
 df = pd.read_csv("stock_urls.csv")
 new_df = df[df.COMPLETED=="NO"]
 new_urls = new_df.URL
