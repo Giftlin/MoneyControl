@@ -1,12 +1,10 @@
 from selenium import webdriver
-from selenium.webdriver.common.by import By
-import pandas as pd
+from webdriver_manager.chrome import ChromeDriverManager
 from datetime import datetime
-import os
+options = webdriver.ChromeOptions()
 
 start_time = datetime.now()
-driver = webdriver.Chrome(
-    executable_path="C:\\Users\\Giftlin Nowfal\\OneDrive\\Documents\\chromedriver.exe")
+driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
 html = ""
 list_page = ["", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M",
              "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "others"]
