@@ -22,5 +22,5 @@ for element in list_page:
     driver.get(URL)
     html = html + "        " + driver.page_source
 
-with open("html_stock.txt", "w", encoding="utf-8") as f:
+with open("/files/html_stock.txt", "w", encoding="utf-8") as f:
     f.write(html)
