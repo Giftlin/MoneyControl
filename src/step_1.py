@@ -1,10 +1,17 @@
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from datetime import datetime
-options = webdriver.ChromeOptions()
+from webdriver_manager.firefox import GeckoDriverManager
+from webdriver_manager.microsoft import EdgeChromiumDriverManager
+from msedge.selenium_tools import EdgeOptions, Edge
 
-start_time = datetime.now()
-driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
+try:
+  options = webdriver.ChromeOptions()
+  driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
+except Exception:
+  options = webdriver.FirefoxOptions()
+  driver = webdriver.Chrome(GeckoDriverManager().install(), options=options)
+  
 html = ""
 list_page = ["", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M",
              "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "others"]
