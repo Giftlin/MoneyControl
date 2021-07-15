@@ -25,10 +25,6 @@ lst = [x.split('href="')[1]
 lst_url = [x.split('"')[0] for x in lst]
 lst_name = [x.split(">")[-1] if len(x.split('" title="')) < 2 else x.split(
     '" title="')[1].split('"')[0] for x in lst]
-print(len(lst))
-print(lst)
-print(lst_name)
-
 
 list_page = ["","A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", '<link rel="stylesheet" ',
              "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "OTHERS", "Others", '<link rel="stylesheet"', "", "Login", """
@@ -45,4 +41,5 @@ df["WEAKNESSES"] = ""
 df["OPPORTUNITIES"] = ""
 df["THREATS"] = ""
 df["COMPLETED"] = "NO"
-df.to_csv("stock_urls.csv", index=False)
+with open('stock_urls.csv', 'w') as f:
+  df.to_csv(f, index=False)
