@@ -38,5 +38,5 @@ df["WEAKNESSES"] = ""
 df["OPPORTUNITIES"] = ""
 df["THREATS"] = ""
 df["COMPLETED"] = "NO"
-with open('../files/stock_urls.csv', 'w') as f:
+with open('files/stock_urls.csv', 'w') as f:
     df.to_csv(f, index=False)
