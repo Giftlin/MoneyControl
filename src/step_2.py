@@ -14,6 +14,7 @@ for URL in new_urls:
     try:
         val = html.split('data-numberanimate-value="')[1].split('"')[0]
         df.loc[df.URL == URL, 'PRICE'] = val
+        print(val)
         s = html.split("<strong>Strengths (")[1].split(")")[0]
         df.loc[df.URL == URL, 'STRENGTHS'] = s
         w = html.split("<strong>Weaknesses (")[1].split(")")[0]
