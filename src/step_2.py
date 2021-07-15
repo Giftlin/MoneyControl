@@ -2,7 +2,8 @@ import pandas as pd
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 options = webdriver.ChromeOptions()
-
+options.add_argument("start-maximized")
+options.add_argument("--headless")
 driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
 df = pd.read_csv("files/stock_urls.csv")
 new_df = df[df.COMPLETED=="NO"]
