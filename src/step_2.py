@@ -4,7 +4,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 options = webdriver.ChromeOptions()
 
 driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
-df = pd.read_csv("stock_urls.csv")
+df = pd.read_csv("files/stock_urls.csv")
 new_df = df[df.COMPLETED=="NO"]
 new_urls = new_df.URL
 for URL in new_urls:
